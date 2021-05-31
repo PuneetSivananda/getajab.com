@@ -9,6 +9,7 @@
     "dev": "preact watch",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "prettier-eslint '**/*.{js,jsx,ts,tsx}' --write",
+    "lint:staged": "lint-staged",
     "test": "jest ./tests"
   },
   "eslintConfig": {
@@ -54,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./node_modules/.bin/lint-staged"
+      "pre-commit": "npm run lint:staged"
     }
   },
   "lint-staged": {
