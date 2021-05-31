@@ -47,5 +47,15 @@
       "<rootDir>/tests/__mocks__/browserMocks.ts",
       "<rootDir>/tests/__mocks__/setupTests.ts"
     ]
+  },
+  "lint-staged": {
+    "*.{js,tsx}": [
+      "./node_modules/.bin/eslint --fix",
+      "git add"
+    ],
+    "*.{css,less,sass}": [
+      "./node_modules/.bin/stylelint --fix",
+      "git add"
+    ]
   }
 }
