@@ -1,6 +1,6 @@
 import style from './style.css';
 
-export default function Card({ id }) {
+export default function Card() {
 	return (
 		<div class='card'>
 			<div class='card_image'>
