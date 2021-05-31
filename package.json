@@ -10,7 +10,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint src/**/*.js",
     "lint:eslint": "eslint --ignore-path .gitignore",
-    "lint:eslint:fix": "eslint --ignore-path .gitignore --fix",
+    "lint:eslint:fix": "eslint --cache --fix",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
     "format": "prettier --write '**/*.{ts,tsx,js,css,html}' **/*",
@@ -27,20 +27,19 @@
       "build/"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run lint:eslint:fix",
-      "git add --force"
+      "npm run lint:eslint:fix"
     ],
     "*.{css,less,sass}": [
       "./node_modules/.bin/stylelint --fix",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:staged"
-    }
   },
   "dependencies": {
     "preact": "^10.3.1",
