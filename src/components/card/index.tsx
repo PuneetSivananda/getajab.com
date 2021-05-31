@@ -1,12 +1,16 @@
-import style from "./style.css";
+import style from './style.css';
 
-export default function Card({ hiddenValue, flipStatus, onClick }) {
-  return (
-    <div class={style.card} data-flipStatus={flipStatus}>
-      <button class={style.front} onClick={onClick}>
-        ?
-      </button>
-      <div class={style.back}>{hiddenValue}</div>
-    </div>
-  );
+export default function Card({ id }) {
+	return (
+		<div class='card'>
+			<div class='card_image'>
+				<img src='https://picsum.photos/500/300/?image=14' />
+			</div>
+			<div class='card_content'>
+				<h2 class='card_title'>Card Grid Layout</h2>
+				<p class='card_text'>Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+				<button class='btn card_btn'>Read More</button>
+			</div>
+		</div>
+	);
 }
