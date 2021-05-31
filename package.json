@@ -52,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "./node_modules/.bin/lint-staged"
     }
   },
   "lint-staged": {
