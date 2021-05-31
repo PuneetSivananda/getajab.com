@@ -38,21 +38,15 @@ Thanks to [Jason Miller](https://github.com/developit) for writing a simple and 
 **1. Clone this repo:**
 
 ```sh
-git clone --depth 1 https://github.com/developit/preact-boilerplate.git my-app
+git clone --depth 1 https://github.com/PuneetSivananda/getajab.com.git my-app
 cd my-app
 ```
 
 
-**2. Make it your own:**
-
-```sh
-rm -rf .git && git init && npm init
-```
-
 > :information_source: This re-initializes the repo and sets up your NPM project.
 
 
-**3. Install the dependencies:**
+**2. Install the dependencies:**
 
 ```sh
 npm install
