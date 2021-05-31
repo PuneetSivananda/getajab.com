@@ -2,7 +2,7 @@ import style from './style.css';
 
 export default function Card() {
 	return (
-		<div class='card'>
+		<div class={style.card}>
 			<div class='card_image'>
 				<img src='https://picsum.photos/500/300/?image=14' />
 			</div>
