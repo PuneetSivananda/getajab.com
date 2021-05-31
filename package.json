@@ -27,6 +27,21 @@
       "build/"
     ]
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:eslint:fix",
+      "git add --force"
+    ],
+    "*.{css,less,sass}": [
+      "./node_modules/.bin/stylelint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:staged"
+    }
+  },
   "dependencies": {
     "preact": "^10.3.1",
     "preact-render-to-string": "^5.1.4",
@@ -66,21 +81,6 @@
     "setupFiles": [
       "<rootDir>/tests/__mocks__/browserMocks.ts",
       "<rootDir>/tests/__mocks__/setupTests.ts"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "npm run lint:eslint:fix",
-      "git add --force"
-    ],
-    "*.{css,less,sass}": [
-      "./node_modules/.bin/stylelint --fix",
-      "git add"
     ]
   }
 }
