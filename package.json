@@ -9,6 +9,7 @@
     "dev": "preact watch",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "prettier-eslint '**/*.{js,jsx,ts,tsx}' --write",
+    "lint:eslint:fix": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
     "lint:staged": "lint-staged",
     "test": "jest ./tests"
   },
@@ -59,9 +60,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,tsx}": [
-      "npm run lint:fix",
-      "git add"
+    "*.tsx": [
+      "npm run lint:eslint:fix",
+      "git add --force"
     ],
     "*.{css,less,sass}": [
       "./node_modules/.bin/stylelint --fix",
