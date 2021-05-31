@@ -50,6 +50,11 @@
       "<rootDir>/tests/__mocks__/setupTests.ts"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,tsx}": [
       "./node_modules/.bin/eslint --fix"
@@ -57,10 +62,5 @@
     "*.{css,less,sass}": [
       "./node_modules/.bin/stylelint --fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
