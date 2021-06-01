@@ -2,11 +2,10 @@
 .heading {
 	padding: 56px 20px;
 	min-height: 100%;
-
 }
 
 .card {
-	padding: 56px;
+	padding: 20px;
 	min-height: 100%;
 	display: flex;
 }

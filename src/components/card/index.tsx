@@ -1,6 +1,7 @@
+import { FunctionalComponent, h } from 'preact';
 import style from './style.css';
 
-export default function Card() {
+const Card: FunctionalComponent = () => {
 	return (
 		<div class={style.card}>
 			<div class='card_image'>
@@ -13,4 +14,6 @@ export default function Card() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default Card;
