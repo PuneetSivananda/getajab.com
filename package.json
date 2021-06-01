@@ -7,11 +7,11 @@
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "yarn run lint:js && yarn run lint:css",
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
     "lint:js": "eslint . --ext .ts,.tsx",
-    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:js:fix": "yarn run lint:js -- --fix",
     "format": "prettier --write '**/*.{ts,tsx,js,css,html}' **/*",
     "format:test": "prettier --check '**/*.{ts,tsx,js,css,html}' **/*",
     "test": "jest ./tests"
@@ -28,7 +28,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "npm run lint:js:fix", 
+      "yarn run lint:js:fix", 
       "git add"
     ],
     "src/**/*.scss": [
@@ -37,7 +37,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:js:fix"
+      "pre-commit": "yarn run lint:js:fix"
     }
   },
   "dependencies": {
