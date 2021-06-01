@@ -8,11 +8,10 @@
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:css": "stylelint src/**/*.js",
-    "lint:eslint": "eslint --ignore-path .gitignore",
-    "lint:eslint:fix": "eslint --cache --fix",
-    "lint:js": "npm run lint:eslint -- . ",
-    "lint:staged": "lint-staged",
+    "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
+    "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
+    "lint:js": "eslint . --ext .ts,.tsx",
+    "lint:js:fix": "npm run lint:js -- --fix",
     "format": "prettier --write '**/*.{ts,tsx,js,css,html}' **/*",
     "format:test": "prettier --check '**/*.{ts,tsx,js,css,html}' **/*",
     "test": "jest ./tests"
@@ -29,7 +28,8 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "eslint . --fix", "git add"
+      "npm run lint:js -- --fix",
+      "git add"
     ],
     "src/**/*.scss": [
       "stylelint --syntax scss --fix", "git add"
