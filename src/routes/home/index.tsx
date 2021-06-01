@@ -1,12 +1,13 @@
-import { FunctionalComponent, h } from 'preact'
-import Card from '../../components/card'
-import style from './style.css'
+/* eslint-disable */
+import { FunctionalComponent, h } from 'preact';
+import Card from '../../components/card';
+import style from './style.css';
 
 const Home: FunctionalComponent = () => {
-  return (
-    <section class={style.cardsWrapper}>
-      <Card />
-      {/* <div class='card-grid-space'>
+	return (
+		<section class={style.cardsWrapper}>
+			<Card />
+			{/* <div class='card-grid-space'>
 				<div class='num'>02</div>
 				<a
 					class='card'
@@ -40,8 +41,8 @@ const Home: FunctionalComponent = () => {
 					</div>
 				</a>
 			</div> */}
-    </section>
-  )
-}
+		</section>
+	);
+};
 
-export default Home
+export default Home;
