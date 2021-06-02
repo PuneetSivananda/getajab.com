@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"jabapi/cowin"
 )
 
 func homePage(w http.ResponseWriter, r *http.Request){
@@ -17,6 +19,6 @@ func setupRoot(){
 
 func main(){
 	fmt.Println("DataApi for the Cowin Stats")
-	cowin.getWeeklyData()
+	cowin.GetWeeklyData()
 	setupRoot()
 }
