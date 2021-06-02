@@ -1,4 +1,9 @@
-package cowin
+package cowinStruct
+
+import (
+	"net/http"	"time"
+)
+
 
 type Response struct {
 	Centers []Center `json:"centers"`
@@ -26,4 +31,11 @@ type Session struct {
 	Vaccine           string `json:"vaccine"`
 	Dose1             int    `json:"available_capacity_dose1"`
 	Dose2             int    `json:"available_capacity_dose2"`
+}
+
+func getWeeklyData() (Item, error) {
+	currentTime := time.Now()
+	URL:= "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=265&date="+ currentTime.format("02-06-2021")
+	// req, err := http.NewRequest("GET",URL)
+	return URL
 }

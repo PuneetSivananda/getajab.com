@@ -17,5 +17,6 @@ func setupRoot(){
 
 func main(){
 	fmt.Println("DataApi for the Cowin Stats")
+	cowin.getWeeklyData()
 	setupRoot()
 }
