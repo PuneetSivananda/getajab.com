@@ -1,7 +1,5 @@
-/* eslint-disable-next-line */
-import { FunctionalComponent, h } from 'preact';
-/* eslint-disable-next-line */
-import { Route, Router } from 'preact-router';
+import { FunctionalComponent, h } from 'preact'
+import { Route, Router } from 'preact-router'
 
 import Home from '../routes/home'
 /* eslint-disable-next-line */

@@ -27,11 +27,13 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "yarn run lint:js:fix"
+    "./src/**/*.{ts,tsx}": [
+      "yarn run lint:js:fix",
+      "git add"
     ],
-    "*.scss": [
-      "stylelint --syntax scss --fix"
+    "./src/**/*.css": [
+      "stylelint --syntax scss --fix",
+      "git add"
     ]
   },
   "husky": {
