@@ -1,6 +1,5 @@
 import { FunctionalComponent, h } from 'preact'
 import style from './style.css'
-import Header from '../header/index'
 
 const Card: FunctionalComponent = () => {
   return (
