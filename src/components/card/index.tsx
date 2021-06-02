@@ -7,7 +7,7 @@ const Card: FunctionalComponent = () => {
       <div class={style.num}>01</div>
       <a
         class={style.card}
-        href="https://codetheweb.blog/2017/10/06/html-syntax/"
+        href=""
         style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)"
       >
         <div>
