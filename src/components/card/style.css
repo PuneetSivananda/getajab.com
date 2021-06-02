@@ -10,15 +10,18 @@
 }
 
 .card {
-  font-family: 'Heebo';
+  font-family: Heebo, Arial, Helvetica, sans-serif;
+
   --bg-filter-opacity: 0.5;
-  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+
+  background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
   height: 20em;
   width: 15em;
   font-size: 1.5em;
   color: white;
   border-radius: 1em;
   padding: 1em;
+
   /* margin: 2em; */
   display: flex;
   align-items: flex-end;
@@ -34,6 +37,7 @@
 
 .card:hover {
   transform: rotate(0);
+  color: var(--color);
 }
 
 .card h1 {
@@ -44,7 +48,7 @@
 
 .card p {
   font-size: 0.75em;
-  font-family: 'Open Sans';
+  font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-top: 0.5em;
   line-height: 2em;
 }
@@ -55,7 +59,7 @@
 
 .card .tags .tag {
   font-size: 0.75em;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 0.3rem;
   padding: 0 0.5em;
   margin-right: 0.5em;
@@ -75,10 +79,11 @@
   font-size: 0.75em;
   padding: 1em;
   line-height: 1em;
-  opacity: .8;
+  opacity: 0.8;
 }
 
-.card:before, .card:after {
+.card::before,
+.card::after {
   content: '';
   transform: scale(0);
   transform-origin: top left;
@@ -91,23 +96,20 @@
   transition-timing-function: ease-in-out;
 }
 
-.card:before {
+.card::before {
   background: #ddd;
   width: 250%;
   height: 250%;
 }
 
-.card:after {
+.card::after {
   background: white;
   width: 200%;
   height: 200%;
 }
 
-.card:hover {
-  color: var(--color);
-}
-
-.card:hover:before, .card:hover:after {
+.card:hover::before,
+.card:hover::after {
   transform: scale(1);
 }
 
@@ -132,43 +134,4 @@
 .info h1 {
   font-size: 1em;
   font-weight: normal;
-}
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-  .cardsWrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .cardsWrapper {
-    grid-template-columns: 1fr;
-  }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
-    margin-left: 0;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .cardsWrapper {
-    padding: 4rem 2rem;
-  }
-  .card {
-    max-width: calc(100vw - 4rem);
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-  .info h1 {
-    margin: 0;
-  }
 }

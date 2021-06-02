@@ -11,7 +11,7 @@
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
     "lint:js": "eslint . --ext .ts,.tsx",
-    "lint:js:fix": "yarn run lint:js -- --fix",
+    "lint:js:fix": "yarn run lint:js --fix",
     "format": "prettier --write '**/*.{ts,tsx,js,css,html}' **/*",
     "format:test": "prettier --check '**/*.{ts,tsx,js,css,html}' **/*",
     "test": "jest ./tests"
@@ -74,6 +74,7 @@
     "prettier-eslint": "^12.0.0",
     "sirv-cli": "^1.0.0-next.3",
     "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
     "typescript": "^3.7.5"
   },
   "jest": {
