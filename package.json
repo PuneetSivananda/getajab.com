@@ -27,10 +27,10 @@
     ]
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": [
+    "*.{ts,tsx}": [
       "yarn run lint:js:fix"
     ],
-    "**/*.scss": [
+    "*.scss": [
       "stylelint --syntax scss --fix"
     ]
   },
