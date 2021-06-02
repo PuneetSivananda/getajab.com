@@ -1,3 +1,3 @@
-module github.com/PuneetSivananda/jabapi
+module jabapi
 
 go 1.16
