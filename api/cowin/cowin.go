@@ -2,6 +2,7 @@ package cowin
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 )
 
@@ -34,10 +35,15 @@ type Session struct {
 	Dose2             int    `json:"available_capacity_dose2"`
 }
 
-func GetWeeklyData(){
+func GetWeeklyData()(Response, error){
 	currentTime := time.Now()
 	fmt.Println(currentTime.Format("02-01-2006"))
-	// URL:= "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=265&date="+ currentTime.format("02-06-2021")
-	// req, err := http.NewRequest("GET",URL)
+	URL:= "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=265&date="+ currentTime.Format("02-06-2021")
+	req, err := http.NewRequest("GET",URL,nil)
+	if err!= nil{
+		fmt.Println(err)
+		return Response{}, err
+	}
+
 	
 }

@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"jabapi/cowin"
+	"github.com/PuneetSivananda/cowin-api/cowin"
 )
 
 func homePage(w http.ResponseWriter, r *http.Request){
