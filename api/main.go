@@ -19,6 +19,11 @@ func setupRoot(){
 
 func main(){
 	fmt.Println("DataApi for the Cowin Stats")
-	cowin.GetWeeklyData()
-	setupRoot()
+	
+	data, err:= cowin.GetWeeklyData()
+	if err!=nil{
+		fmt.Println(err)
+	}
+	fmt.Printf("%+v\n", data)
+	// setupRoot()
 }

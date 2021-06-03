@@ -20,7 +20,7 @@ type Center struct {
 	State    string    `json:"state_name"`
 	District string    `json:"district_name"`
 	Block    string    `json:"block_name"`
-	Pin      string    `json:"pincode"`
+	Pin      int    `json:"pincode"`
 	Lat      int       `json:"lat"`
 	Long     int       `json:"long"`
 	Fee      string    `json:"fee_type"`
@@ -47,14 +47,14 @@ func GetWeeklyData()(Response, error){
 	req, err := http.NewRequest("GET",URL,nil)
 	if err!= nil{
 		fmt.Println(err)
-		// return Response{}, err
+		return Response{}, err
 	}
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err !=nil{
 		fmt.Println(err)
-		// return Response{}, err
+		return Response{}, err
 	}
  	defer resp.Body.Close()
 	fmt.Println(resp.Status)
@@ -69,8 +69,9 @@ func GetWeeklyData()(Response, error){
 	err = json.Unmarshal(body, &response)
 	if err!= nil{
 		fmt.Println("Failed Unmarshalling response json")
+		return Response{}, err
 	}
-	fmt.Println(response)
+	
 	return response, nil
 	
 }
