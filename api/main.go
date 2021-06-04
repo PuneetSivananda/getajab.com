@@ -9,12 +9,12 @@ import (
 )
 
 func CowinData(w http.ResponseWriter, r *http.Request){
-	ws, err:= websocket.Upgrade(w,r)
+	ws, err:= websocket.Upgrade(w,*r)
 	if err!= nil{
-		fmt.Fprintf(w, err)
+		fmt.Fprintf(w,"%+v\n",err)
 	}
-
-
+	//Passing the websocket connection, writes to the websocket
+	go websocket.Writer(ws)
 }
 
 func homePage(w http.ResponseWriter, r *http.Request){
@@ -29,6 +29,5 @@ func setupRoot(){
 
 func main(){
 	fmt.Println("DataApi for the Cowin Stats")
-
 	setupRoot()
 }

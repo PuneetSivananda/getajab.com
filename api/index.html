@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WS Data</title>
+</head>
+<body>
+<h1>Cowin Data</h1>
+<h1 id="subs"></h1>
+
+<script>
+  let data = {}
+  const websocket = new WebSocket("ws://localhost:8081/data")
+  
+  websocket.onopen= function(evt){
+    console.log("Successfully connected to the websocket")
+  }
+
+  websocket.onerror= function(err){
+    console.log(err)
+  }
+
+  websocket.onmessage = function(evnt){
+    data = JSON.parse(evnt.data)
+    console.log(data)
+    document.getElementById("subs").innerText = data
+  }
+
+
+</script>
+</body>
+</html>
