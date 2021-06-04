@@ -9,33 +9,7 @@ import (
 )
 
 
-type Response struct {
-	Centers []Center `json:"centers"`
-}
 
-type Center struct {
-	CenterId int       `json:"center_id"`
-	Name     string    `json:"name"`
-	Addr     string    `json:"address"`
-	State    string    `json:"state_name"`
-	District string    `json:"district_name"`
-	Block    string    `json:"block_name"`
-	Pin      int    `json:"pincode"`
-	Lat      int       `json:"lat"`
-	Long     int       `json:"long"`
-	Fee      string    `json:"fee_type"`
-	Sessions []Session `json:"sessions"`
-}
-
-type Session struct {
-	SessionID         string `json:"session_id"`
-	Date              string `json:"date"`
-	AvailableCapacity int    `json:"available_capacity"`
-	MinAge            int    `json:"min_age_limit"`
-	Vaccine           string `json:"vaccine"`
-	Dose1             int    `json:"available_capacity_dose1"`
-	Dose2             int    `json:"available_capacity_dose2"`
-}
 
 func GetWeeklyData()(Response, error){
 	currentTime := time.Now()
@@ -74,7 +48,7 @@ func GetWeeklyData()(Response, error){
 
 	for _,center:= range response.Centers {
 		for _, session:= range center.Sessions{
-			fmt.Println(center.Pin, center.Name, session.AvailableCapacity)
+			fmt.Println(center.Pin, center.Name, session.AvailableCapacity, center.Sessions)
 			if session.AvailableCapacity > 1{
 				fmt.Println(session)
 			} 
