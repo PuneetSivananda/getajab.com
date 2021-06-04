@@ -25,5 +25,6 @@ func main(){
 		fmt.Println(err)
 	}
 	fmt.Printf("%+v\n", data)
+	
 	// setupRoot()
 }
