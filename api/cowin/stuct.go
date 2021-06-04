@@ -28,12 +28,15 @@ type Session struct {
 	Dose2             int    `json:"available_capacity_dose2"`
 }
 
-type session struct {
-	Pin               string `json:"Pin"`
+type item struct {
+	Pin               int    `json:"Pin"`
 	Name              string `json:"Name"`
 	AvailableCapacity int    `json:"AvailableCapacity"`
+	Lat               int    `json:"lat"`
+	Long              int    `json:"long"`
+	Date              string `json:"date"`
 }
 
 type APIResponse struct {
-	Data []*session `json:"Data"`
+	Data []*item `json:"Data"`
 }

@@ -11,7 +11,7 @@ import (
 
 
 
-func GetWeeklyData()(Response, error){
+func GetWeeklyData()(APIResponse, error){
 	currentTime := time.Now()
 	date:= currentTime.Format("02-01-2006")
 	// q := os.Getenv("COWINAPIURL")
@@ -21,14 +21,14 @@ func GetWeeklyData()(Response, error){
 	req, err := http.NewRequest("GET",URL,nil)
 	if err!= nil{
 		fmt.Println(err)
-		return Response{}, err
+		// return []byte(""), err
 	}
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err !=nil{
 		fmt.Println(err)
-		return Response{}, err
+		// return []byte(""), err
 	}
  	defer resp.Body.Close()
 	fmt.Println(resp.Status)
@@ -43,18 +43,28 @@ func GetWeeklyData()(Response, error){
 	err = json.Unmarshal(body, &response)
 	if err!= nil{
 		fmt.Println("Failed Unmarshalling response json")
-		return Response{}, err
+		// return []byte(""), err
 	}
+	
+	var centers[] *item
 
 	for _,center:= range response.Centers {
 		for _, session:= range center.Sessions{
-			fmt.Println(center.Pin, center.Name, session.AvailableCapacity, center.Sessions)
-			if session.AvailableCapacity > 1{
-				fmt.Println(session)
-			} 
+			fmt.Println(center.Pin, center.Name, session.AvailableCapacity, session.Date, center.Lat, center.Long)
+			centers = append(centers, &item{ Pin: center.Pin, 
+																			 Name: center.Name, 
+																			 AvailableCapacity: session.AvailableCapacity,
+																			 Date: session.Date, 
+																			 Lat: center.Lat, 
+																			 Long: center.Long,
+																			})
+			// if session.AvailableCapacity > 1{
+			// 	fmt.Println(session)
+			// } 
 		}
 	}
-	
-	return response, nil
-	
+
+	var p APIResponse
+	p.Data = centers
+	return p, nil
 }
