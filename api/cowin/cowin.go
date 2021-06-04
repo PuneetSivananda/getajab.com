@@ -21,14 +21,14 @@ func GetWeeklyData()(APIResponse, error){
 	req, err := http.NewRequest("GET",URL,nil)
 	if err!= nil{
 		fmt.Println(err)
-		// return []byte(""), err
+		return APIResponse{}, err
 	}
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err !=nil{
 		fmt.Println(err)
-		// return []byte(""), err
+		return APIResponse{}, err
 	}
  	defer resp.Body.Close()
 	fmt.Println(resp.Status)
@@ -51,7 +51,8 @@ func GetWeeklyData()(APIResponse, error){
 	for _,center:= range response.Centers {
 		for _, session:= range center.Sessions{
 			fmt.Println(center.Pin, center.Name, session.AvailableCapacity, session.Date, center.Lat, center.Long)
-			centers = append(centers, &item{ Pin: center.Pin, 
+			centers = append(centers, &item{ 
+																			 Pin: center.Pin, 
 																			 Name: center.Name, 
 																			 AvailableCapacity: session.AvailableCapacity,
 																			 Date: session.Date, 
