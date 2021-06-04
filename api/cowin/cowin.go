@@ -71,6 +71,15 @@ func GetWeeklyData()(Response, error){
 		fmt.Println("Failed Unmarshalling response json")
 		return Response{}, err
 	}
+
+	for _,center:= range response.Centers {
+		for _, session:= range center.Sessions{
+			fmt.Println(center.Pin, center.Name, session.AvailableCapacity)
+			if session.AvailableCapacity > 1{
+				fmt.Println(session)
+			} 
+		}
+	}
 	
 	return response, nil
 	
