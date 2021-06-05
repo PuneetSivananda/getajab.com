@@ -5,30 +5,30 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
 
 
 
-func GetWeeklyData()(APIResponse, error){
+func GetWeeklyData()(Response, error){
 	currentTime := time.Now()
 	date:= currentTime.Format("02-01-2006")
-	// q := os.Getenv("COWINAPIURL")
-	URL:= "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=265&date="+ date
-	// URL := q+currentTime.Format("02-06-2021")
+	q := os.Getenv("COWINAPIURL")
+	URL := q+date
 	fmt.Println(URL)
 	req, err := http.NewRequest("GET",URL,nil)
 	if err!= nil{
 		fmt.Println(err)
-		return APIResponse{}, err
+		// return APIResponse{}, err
 	}
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err !=nil{
 		fmt.Println(err)
-		return APIResponse{}, err
+		// return APIResponse{}, err
 	}
  	defer resp.Body.Close()
 	fmt.Println(resp.Status)
@@ -50,7 +50,7 @@ func GetWeeklyData()(APIResponse, error){
 
 	for _,center:= range response.Centers {
 		for _, session:= range center.Sessions{
-			fmt.Println(center.Pin, center.Name, session.AvailableCapacity, session.Date, center.Lat, center.Long)
+			// fmt.Println(center.Pin, center.Name, session.AvailableCapacity, session.Date, center.Lat, center.Long)
 			centers = append(centers, &item{ 
 																			 Pin: center.Pin, 
 																			 Name: center.Name, 
@@ -65,7 +65,13 @@ func GetWeeklyData()(APIResponse, error){
 		}
 	}
 
-	var p APIResponse
-	p.Data = centers
-	return p, nil
+	// var p APIResponse
+	// p.Data = centers
+
+	// data := &APIResponse{
+	// 	Data: p.Data,
+	// }
+
+
+	return response, nil
 }
