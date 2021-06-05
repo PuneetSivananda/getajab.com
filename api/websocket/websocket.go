@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
+	"strconv"
 	"time"
 
 	"github.com/gorilla/websocket"
@@ -33,7 +35,8 @@ func Upgrade(w http.ResponseWriter, r http.Request) (*websocket.Conn, error) {
 func Writer(conn *websocket.Conn){
 
 	for {
-		ticker:= time.NewTicker(5 * time.Second)
+		sToInt,_:= strconv.Atoi(os.Getenv("TICK"))
+		ticker:= time.NewTicker(time.Duration(sToInt) * time.Minute)
 		for t:= range ticker.C{
 			fmt.Printf("Updating data %+v\n", t)
 			data, err:= cowin.GetWeeklyData()

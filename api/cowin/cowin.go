@@ -38,7 +38,21 @@ type Session struct {
 	Dose2             int    `json:"available_capacity_dose2"`
 }
 
-func GetWeeklyData()(Response, error){
+
+type Item struct {
+	Pin               int    `json:"Pin"`
+	Name              string `json:"Name"`
+	AvailableCapacity int    `json:"AvailableCapacity"`
+	Lat               int    `json:"lat"`
+	Long              int    `json:"long"`
+	Date              string `json:"date"`
+}
+
+type APIResponse struct {
+	Data []Item `json:"Data"`
+}
+
+func GetWeeklyData()(APIResponse, error){
 	currentTime := time.Now()
 	date:= currentTime.Format("02-01-2006")
 	q := os.Getenv("COWINAPIURL")
@@ -47,14 +61,14 @@ func GetWeeklyData()(Response, error){
 	req, err := http.NewRequest("GET",URL,nil)
 	if err!= nil{
 		fmt.Println(err)
-		return Response{}, err
+		return APIResponse{}, err
 	}
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err !=nil{
 		fmt.Println(err)
-		return Response{}, err
+		return APIResponse{}, err
 	}
  	defer resp.Body.Close()
 	fmt.Println(resp.Status)
@@ -69,9 +83,34 @@ func GetWeeklyData()(Response, error){
 	err = json.Unmarshal(body, &response)
 	if err!= nil{
 		fmt.Println("Failed Unmarshalling response json")
-		return Response{}, err
+		return APIResponse{}, err
+	}
+
+	var centers[] Item
+
+	for _,center:= range response.Centers {
+		for _, session:= range center.Sessions{
+			// fmt.Println(center.Pin, center.Name, session.AvailableCapacity, session.Date, center.Lat, center.Long)
+			centers = append(centers, Item{ 
+																			 Pin: center.Pin, 
+																			 Name: center.Name, 
+																			 AvailableCapacity: session.AvailableCapacity,
+																			 Date: session.Date, 
+																			 Lat: center.Lat, 
+																			 Long: center.Long,
+																			})
+			// if session.AvailableCapacity > 1{
+			// 	fmt.Println(session)
+			// } 
+		}
+	}
+
+	var p APIResponse
+	p.Data = centers
+
+	data := APIResponse{
+		Data: p.Data,
 	}
 	
-	return response, nil
-	
+	return data, nil
 }
