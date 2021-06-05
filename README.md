@@ -162,6 +162,13 @@ Defining what component(s) to load for a given URL is easy and declarative. You 
 
 ---
 
+```bash 
+  git subtree push --prefix api heroku master 
+```
+
+---
+
+
 
 ## License
 
@@ -170,3 +177,4 @@ MIT
 
 [Preact]: https://developit.github.io/preact
 [webpack]: https://webpack.github.io
+
