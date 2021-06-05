@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -40,9 +41,8 @@ type Session struct {
 func GetWeeklyData()(Response, error){
 	currentTime := time.Now()
 	date:= currentTime.Format("02-01-2006")
-	// q := os.Getenv("COWINAPIURL")
-	URL:= "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=265&date="+ date
-	// URL := q+currentTime.Format("02-06-2021")
+	q := os.Getenv("COWINAPIURL")
+	URL := q+date
 	fmt.Println(URL)
 	req, err := http.NewRequest("GET",URL,nil)
 	if err!= nil{
