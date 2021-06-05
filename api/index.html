@@ -10,7 +10,7 @@
 <script>
   let data = {}
   const websocket = new WebSocket("ws://localhost:8081/data")
-
+  
   websocket.onopen= function(evt){
     console.log("Successfully connected to the websocket")
   }
@@ -20,7 +20,7 @@
   }
 
   websocket.onmessage = function(evnt){
-    data = JSON.stringify(evnt.data)
+    data = JSON.parse(evnt.data)
     console.log(data)
     document.getElementById("subs").innerText = data
   }
