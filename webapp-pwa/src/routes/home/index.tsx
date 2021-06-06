@@ -3,7 +3,33 @@ import { FunctionalComponent, h } from 'preact';
 import Card from '../../components/card';
 import style from './style.css';
 
+const fetchData = () => {
+	let data = { Data: [] };
+	const websocket = new WebSocket('ws://evening-crag-51333.herokuapp.com/data');
+
+	websocket.onopen = function(evt) {
+		console.log('Successfully connected to the websocket');
+	};
+
+	websocket.onerror = function(err) {
+		console.log(err);
+	};
+
+	websocket.onmessage = function(evnt) {
+		data = JSON.parse(evnt.data);
+		console.log('Sending data to the connected websocket');
+		console.log(data);
+	};
+	return data;
+};
+
 const Home: FunctionalComponent = () => {
+	let res = fetchData();
+	if (res.Data.length > 1) {
+		console.log(res);
+		/**PAss theis data down to the child component */
+	}
+
 	return (
 		<main class='main-area'>
 			<div class={style.centered}>
