@@ -9,7 +9,7 @@
 
 <script>
   let data = {}
-  const websocket = new WebSocket("ws://localhost:8081/data")
+  const websocket = new WebSocket("ws://evening-crag-51333.herokuapp.com/data")
   
   websocket.onopen= function(evt){
     console.log("Successfully connected to the websocket")

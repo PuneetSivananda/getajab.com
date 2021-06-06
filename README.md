@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/gokulkrishh/preact-pwa-boilerplate.svg?branch=master)](https://travis-ci.org/gokulkrishh/preact-pwa-boilerplate)
 [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/developit/preact)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ca11c8c5-c780-43a0-8dba-4808ed9547a0/deploy-status)](https://app.netlify.com/sites/clever-yalow-4f684d/deploys)
+
 > :guitar: Ready-to-rock [Preact] starter project, powered by [webpack].
 >
 > :rocket: If you're starting a new project using [Preact], you've come to the right place.
