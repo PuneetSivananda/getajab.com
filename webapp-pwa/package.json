@@ -26,6 +26,12 @@
       "build/"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint . --ext .ts,.tsx --fix"
@@ -34,11 +40,7 @@
       "stylelint --syntax scss --fix"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+ 
   "dependencies": {
     "preact": "^10.3.1",
     "preact-render-to-string": "^5.1.4",
