@@ -36,7 +36,7 @@ func Writer(conn *websocket.Conn){
 
 	for {
 		sToInt,_:= strconv.Atoi(os.Getenv("TICK"))
-		ticker:= time.NewTicker(time.Duration(sToInt) * time.Minute)
+		ticker:= time.NewTicker(time.Duration(sToInt) * time.Second)
 		for t:= range ticker.C{
 			fmt.Printf("Updating data %+v\n", t)
 			data, err:= cowin.GetWeeklyData()
