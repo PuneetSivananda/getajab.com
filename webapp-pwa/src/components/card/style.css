@@ -140,3 +140,6 @@
   font-size: 1em;
   font-weight: normal;
 }
+.backgroundImg{
+  --bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)
+}
