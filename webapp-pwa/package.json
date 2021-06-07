@@ -8,11 +8,11 @@
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "yarn run lint:js && yarn run lint:css",
-    "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
-    "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
+    "lint:scss": "stylelint 'webapp-pwa/src/**/*.scss' --syntax scss",
+    "lint:scss:fix": "stylelint 'webapp-pwa/src/**/*.scss' --syntax scss --fix",
     "lint:js": "eslint . --ext .ts,.tsx",
     "lint:js:fix": "yarn run lint:js --fix",
-    "format": "prettier --write '**/*.{ts,tsx,js,css,html}' **/*",
+    "format": "prettier --write 'webapp-pwa/src/**/*.{ts,tsx,js,css,html}' **/*",
     "format:test": "prettier --check '**/*.{ts,tsx,js,css,html}' **/*",
     "test": "jest ./tests"
   },
@@ -28,7 +28,7 @@
   },
   "lint-staged": {
     "webapp-pwa/src/*.{ts,tsx}": [
-      "eslint . --ext .ts,.tsx --fix"
+      "yarn run lint:js:fix"
     ],
     "*.css": [
       "stylelint --syntax scss --fix"

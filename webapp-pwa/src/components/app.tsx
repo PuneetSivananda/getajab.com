@@ -3,9 +3,9 @@ import { Route, Router } from 'preact-router'
 
 import Home from '../routes/home'
 /* eslint-disable-next-line */
-import NotFoundPage from '../routes/notfound';
+import NotFoundPage from '../routes/notfound'
 /* eslint-disable-next-line */
-import Header from './header';
+import Header from './header'
 
 const App: FunctionalComponent = () => {
   return (
