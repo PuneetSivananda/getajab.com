@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { FunctionalComponent, h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import Card from '../../components/card';
 import style from './style.css';
 
@@ -14,10 +15,10 @@ interface DataItem{
 
 interface DataList { Data: DataItem[] }
 
+let data: DataList = {Data:[]}
+const websocket = new WebSocket('ws://evening-crag-51333.herokuapp.com/data');
 
 const fetchData = () => {
-	let data: DataList = {Data:[]};
-	const websocket = new WebSocket('ws://evening-crag-51333.herokuapp.com/data');
 
 	websocket.onopen = function(evt) {
 		console.log('Successfully connected to the websocket');
@@ -30,61 +31,55 @@ const fetchData = () => {
 	websocket.onmessage = function(evnt) {
 		data = JSON.parse(evnt.data);
 		console.log('Sending data to the connected websocket');
-		console.log(data);
 	};
 	return data;
 };
 
+
+
 const Home: FunctionalComponent = () => {
-	let res = fetchData();
-	  
-  /**PAss theis data down to the child component */   
-  return (
-    <main>
-      <div class={style.centered}>
-        <section class={style.cards}>
-          {res.Data.map(item => {
-            <Card
-            image="http://placekitten.com/810/610"
-            cardColor={'red'}
-            title={item.Name}
-            body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur
-            consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor
-            nesciunt laboriosam obcaecati corporis numquam."/>
-
-          })}
-          <Card
-            image='http://placekitten.com/800/610'
-            cardColor={'green'}
-            title={'Fluffy'}
-            body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur
-            consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor
-            nesciunt laboriosam obcaecati corporis numquam."/>
-          
+  const [listItems, setData] = useState<DataItem[]>([])
+  
+  useEffect(() => { 
+  
+    websocket.onmessage = function(evnt) {
+      data = JSON.parse(evnt.data);
+      console.log('Sending data to the connected websocket');
+      setData(data.Data)
+      console.log(data)
+    };
     
+  }, [setData])
 
-          <Card
-            image="http://placekitten.com/816/610"
-            cardColor={'red'}
-            title={'Kitty'}
-            body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur
-            consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor
-            nesciunt laboriosam obcaecati corporis numquam."/>
-          
-
-          <Card
-            image="http://placekitten.com/816/600"
-            cardColor={'green'}
-            title={'Patches'}
-            body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur
-            consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor
-            nesciunt laboriosam obcaecati corporis numquam."/>
-        
-        </section>
-      </div>
-    </main>
-  );  
-
+  if (listItems.length > 0) {
+    console.log(listItems)
+    return (
+      <main>
+        <div class={style.centered}>
+          <section class={style.cards}>
+            {
+              listItems.map(item => {
+                <Card
+              
+                  image="http://placekitten.com/810/610"
+                  cardColor={item.date}
+                  title={JSON.stringify(item.Name)}
+                  body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur
+              consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor
+              nesciunt laboriosam obcaecati corporis numquam."
+                />
+              })
+              
+            }
+            
+          </section>
+        </div>
+      </main>
+    );  
+  }
+  else {
+    return (<h1 class={style.centered} >No Data</h1>)
+  }
 };
 
 export default Home;
