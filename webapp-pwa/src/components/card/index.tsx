@@ -4,6 +4,7 @@ import style from './style.css'
 const Card: FunctionalComponent = () => {
   return (
     <div>
+      <div />
       <div class={style.cardgridspace}>
         <div class={style.num}>01</div>
         <a
