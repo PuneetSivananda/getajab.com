@@ -27,7 +27,7 @@
     ]
   },
   "lint-staged": {
-    "webapp-pwa/src/*.{ts,tsx}": [
+    "*.{ts,tsx}": [
       "yarn run lint:js:fix"
     ],
     "*.css": [
