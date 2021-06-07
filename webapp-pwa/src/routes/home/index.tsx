@@ -46,24 +46,36 @@ const Home: FunctionalComponent = () => {
       data = JSON.parse(evnt.data);
       console.log('Sending data to the connected websocket');
       setData(data.Data)
-      console.log(data)
     };
     
   }, [setData])
-
   if (listItems.length > 0) {
     console.log(listItems)
     return (
+      <CardLayout items={listItems} />
+      
+    );  
+  }
+  else {
+    return (<h1 class={style.centered} >No Data</h1>)
+  }
+};
+
+
+
+const CardLayout = (items: DataItem[]) => {
+  return(
       <main>
         <div class={style.centered}>
           <section class={style.cards}>
+          
             {
-              listItems.map(item => {
+              items.map(item => {
                 <Card
               
                   image="http://placekitten.com/810/610"
-                  cardColor={item.date}
-                  title={JSON.stringify(item.Name)}
+                  cardColor={"red"}
+                  title={item.Name}
                   body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur
               consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor
               nesciunt laboriosam obcaecati corporis numquam."
@@ -74,12 +86,7 @@ const Home: FunctionalComponent = () => {
             
           </section>
         </div>
-      </main>
-    );  
-  }
-  else {
-    return (<h1 class={style.centered} >No Data</h1>)
-  }
-};
-
+    </main>
+  )
+}
 export default Home;
