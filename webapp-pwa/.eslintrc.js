@@ -17,7 +17,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   settings: {
-    react: {
+    preact: {
       pragma: 'h',
     },
   },

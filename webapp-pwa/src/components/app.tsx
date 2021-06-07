@@ -1,7 +1,7 @@
-import { FunctionalComponent, h } from 'preact'
-import { Route, Router } from 'preact-router'
+import { FunctionalComponent, h } from 'preact';
+import { Route, Router } from 'preact-router';
 
-import Home from '../routes/home'
+import Home from '../routes/home';
 /* eslint-disable-next-line */
 import NotFoundPage from '../routes/notfound'
 /* eslint-disable-next-line */
@@ -16,7 +16,7 @@ const App: FunctionalComponent = () => {
         <NotFoundPage default />
       </Router>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
