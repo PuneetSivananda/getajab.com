@@ -13,7 +13,9 @@ export const setupWebsocket = ({ host, port }: any) =>
 
 export const fetchData = () => {
   let data = { Data: [] }
+
   const websocket = new WebSocket('ws://evening-crag-51333.herokuapp.com/data')
+
   websocket.onopen = function(evt) {
     console.log('Successfully connected to the websocket')
   }
