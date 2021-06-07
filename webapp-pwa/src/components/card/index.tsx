@@ -1,11 +1,12 @@
-import { FunctionalComponent, h } from 'preact';
+import { h } from 'preact';
 import style from './style.css';
 interface Props {
 	image: string;
 	title: string;
 	body: string;
+	cardColor: string;
 }
-const ColoredLine = ({ color }) => (
+const ColoredLine = ({ color }: { color: string }) => (
 	<hr
 		style={{
 			color: color,
@@ -17,11 +18,11 @@ const ColoredLine = ({ color }) => (
 	/>
 );
 
-const Card: FunctionalComponent = ({ image, title, body }: Props) => {
+const Card = ({ cardColor, image, title, body }: Props) => {
 	return (
 		<article class={style.card}>
 			<a href='#'>
-				<ColoredLine color='red' />
+				<ColoredLine color={cardColor} />
 				<figure class='thumbnail'>
 					<img src={image} alt='meow' />
 				</figure>
