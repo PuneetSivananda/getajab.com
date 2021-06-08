@@ -19,7 +19,7 @@ interface DataList {
 
 const Home: FunctionalComponent = () => {
 	let data: DataList = { Data: [] };
-	const websocket = new WebSocket('ws://evening-crag-51333.herokuapp.com/data');
+	const websocket = new WebSocket('wss://evening-crag-51333.herokuapp.com/data');
 
 	const [ listItems, setData ] = useState<DataList>({ Data: [] });
 
