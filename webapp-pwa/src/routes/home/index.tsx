@@ -17,26 +17,10 @@ interface DataList {
 	Data: DataItem[];
 }
 
-let data: DataList = { Data: [] };
-const websocket = new WebSocket('ws://evening-crag-51333.herokuapp.com/data');
-
-const fetchData = () => {
-	websocket.onopen = function(evt) {
-		console.log('Successfully connected to the websocket');
-	};
-
-	websocket.onerror = function(err) {
-		console.log(err);
-	};
-
-	websocket.onmessage = function(evnt) {
-		data = JSON.parse(evnt.data);
-		console.log('Sending data to the connected websocket');
-	};
-	return data;
-};
-
 const Home: FunctionalComponent = () => {
+	let data: DataList = { Data: [] };
+	const websocket = new WebSocket('ws://evening-crag-51333.herokuapp.com/data');
+
 	const [ listItems, setData ] = useState<DataList>({ Data: [] });
 
 	useEffect(
