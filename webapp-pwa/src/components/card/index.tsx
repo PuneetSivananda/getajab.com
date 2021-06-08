@@ -1,10 +1,13 @@
 import { h } from 'preact';
 import style from './style.css';
 interface Props {
-	image: string;
-	title: string;
-	body: string;
 	cardColor: string;
+	Name: string;
+	Pin: number;
+	AvailableCapacity: number;
+	date: string;
+	lat: number;
+	long: number;
 }
 const ColoredLine = ({ color }: { color: string }) => (
 	<hr
@@ -18,17 +21,18 @@ const ColoredLine = ({ color }: { color: string }) => (
 	/>
 );
 
-const Card = ({ cardColor, image, title, body }: Props) => {
+const Card = ({ cardColor, Pin, AvailableCapacity, date, lat, long, Name }: Props) => {
 	return (
 		<article class={style.card}>
 			<a href='#'>
 				<ColoredLine color={cardColor} />
-				<figure class='thumbnail'>
-					<img src={image} alt='meow' />
-				</figure>
 				<div class={style.cardContent}>
-					<h2>{title}</h2>
-					<p>{body}</p>
+					<h2>{Name}</h2>
+					<h3>Date: {date}</h3>
+					<p>Pin:{Pin}</p>
+					<p>Avaliable Slots: {AvailableCapacity}</p>
+					<p>Lat: {lat}</p>
+					<p>Long: {long}</p>
 				</div>
 			</a>
 		</article>

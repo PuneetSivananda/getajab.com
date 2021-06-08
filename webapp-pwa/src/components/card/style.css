@@ -26,13 +26,18 @@
   font-size: 95%;
 }
 
+.cardContent h3 {
+  font-weight: normal;
+  color: red;
+}
+
 @media screen and (min-width: 40em) {
 
   .card {
     margin-bottom: 1em;
     display: flex;
     flex: 0 1 calc(50% - 0.5em);
-    /* width: calc(50% - 1em); */
+    width: calc(50% - 1em);
   }
 } /* mq 40em*/
 
