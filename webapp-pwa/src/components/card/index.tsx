@@ -16,7 +16,7 @@ const ColoredLine = ({ color }: { color: string }) => (
 			backgroundColor: color,
 			height: 5,
 			width: '100%',
-			margin: 0
+			margin: 0,
 		}}
 	/>
 );
@@ -24,7 +24,7 @@ const ColoredLine = ({ color }: { color: string }) => (
 const Card = ({ cardColor, Pin, AvailableCapacity, date, lat, long, Name }: Props) => {
 	return (
 		<article class={style.card}>
-			<a href='#'>
+			<a href="#">
 				<ColoredLine color={cardColor} />
 				<div class={style.cardContent}>
 					<h2>{Name}</h2>

@@ -21,24 +21,21 @@ const Home: FunctionalComponent = () => {
 	let data: DataList = { Data: [] };
 	const websocket = new WebSocket('wss://evening-crag-51333.herokuapp.com/data');
 
-	const [ listItems, setData ] = useState<DataList>({ Data: [] });
+	const [listItems, setData] = useState<DataList>({ Data: [] });
 
-	useEffect(
-		() => {
-			websocket.onmessage = function(evnt) {
-				data = JSON.parse(evnt.data);
-				console.log('Sending data to the connected websocket');
-				setData(data);
-			};
-		},
-		[ setData ]
-	);
+	useEffect(() => {
+		websocket.onmessage = function(evnt) {
+			data = JSON.parse(evnt.data);
+			console.log('Sending data to the connected websocket');
+			setData(data);
+		};
+	}, [setData]);
 	if (listItems.Data.length > 0) {
 		return (
 			<main>
 				<div class={style.centered}>
 					<section class={style.cards}>
-						{listItems.Data.map((item) => {
+						{listItems.Data.map(item => {
 							return (
 								<Card
 									Pin={item.Pin}
@@ -56,7 +53,13 @@ const Home: FunctionalComponent = () => {
 			</main>
 		);
 	} else {
-		return <h1 class={style.centered}>No Data</h1>;
+		return (
+			<main>
+				<div class={style.centerDiv}>
+					<h3>No Data</h3>;
+				</div>
+			</main>
+		);
 	}
 };
 
