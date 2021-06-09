@@ -28,6 +28,7 @@
 	},
 	"lint-staged": {
 		"*.{ts,tsx}": [
+      "yarn run format",
 			"eslint . --ext .ts,.tsx"
 		],
 		"*.css": [
