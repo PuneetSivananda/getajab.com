@@ -28,8 +28,8 @@
 	},
 	"lint-staged": {
 		"*.{ts,tsx}": [
-      "yarn run format",
-			"eslint . --ext .ts,.tsx"
+			"eslint . --ext .ts,.tsx",
+			"yarn run format"
 		],
 		"*.css": [
 			"stylelint --syntax scss --fix"
@@ -41,6 +41,7 @@
 		}
 	},
 	"dependencies": {
+		"leaflet": "^1.7.1",
 		"preact": "^10.3.1",
 		"preact-render-to-string": "^5.1.4",
 		"preact-router": "^3.2.1"

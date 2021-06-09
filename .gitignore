@@ -1,4 +1,5 @@
 node_modules
 webapp-pwa/build
+webapp-pwa/CNAME
 /*.log
 bin
