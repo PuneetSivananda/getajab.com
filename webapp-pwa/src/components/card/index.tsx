@@ -1,6 +1,5 @@
-import { h } from 'preact';
-import style from './style.css';
-import * as L from 'leaflet';
+import { h } from "preact";
+import style from "./style.css";
 interface Props {
 	cardColor: string;
 	Name: string;
@@ -16,20 +15,13 @@ const ColoredLine = ({ color }: { color: string }) => (
 			color: color,
 			backgroundColor: color,
 			height: 5,
-			width: '100%',
+			width: "100%",
 			margin: 0,
 		}}
 	/>
 );
 
 const Card = ({ cardColor, Pin, AvailableCapacity, date, lat, long, Name }: Props) => {
-	const map = new L.Map('map', {
-		center: new L.LatLng(40.731253, -73.996139),
-		zoom: 12,
-	});
-
-	console.log(map);
-
 	return (
 		<article class={style.card}>
 			<a href="#">

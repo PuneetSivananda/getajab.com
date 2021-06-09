@@ -93,3 +93,8 @@ img {
 	transform: translateY(-50%);
 	transform: translateX(-50%);
 }
+
+#map {
+	height: 180px;
+	width: 180px;
+}

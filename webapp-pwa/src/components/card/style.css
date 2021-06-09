@@ -12,6 +12,12 @@
 	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
 }
 
+.profile {
+	padding: 56px 20px;
+	min-height: 100%;
+	width: 100%;
+}
+
 .cardContent {
 	padding: 1.4em;
 }

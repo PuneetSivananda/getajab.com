@@ -1,7 +1,7 @@
 /* eslint-disable */
-import { FunctionalComponent, h } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
-import style from './style.css';
+import { FunctionalComponent, h } from "preact";
+import { useEffect, useState } from "preact/hooks";
+import style from "./style.css";
 
 interface Props {
 	user: string;
