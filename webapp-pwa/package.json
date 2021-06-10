@@ -12,7 +12,7 @@
 		"lint:scss:fix": "stylelint 'webapp-pwa/src/**/*.scss' --syntax scss --fix",
 		"lint:js": "eslint . --ext .ts,.tsx",
 		"lint:js:fix": "yarn run lint:js --fix",
-		"format": "prettier --write 'webapp-pwa/src/**/*.{ts,tsx,js,css,html}' **/*",
+		"format": "prettier --write 'webapp-pwa/src/**/*.{ts,tsx,js,css,html}' webapp-pwa/src/**/*.{ts,tsx,js,css,html}",
 		"format:test": "prettier --check '**/*.{ts,tsx,js,css,html}' **/*",
 		"test": "jest ./tests"
 	},
