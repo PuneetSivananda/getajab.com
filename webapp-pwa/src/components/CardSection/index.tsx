@@ -31,6 +31,14 @@ const CardSection: FunctionalComponent = () => {
 	}, [setData]);
 
 	if (listItems.Data.length > 0) {
+		const uniqueDate = [...new Set(listItems.Data.map(center => center.date))];
+		const loopData = Array.from(uniqueDate[0]);
+		const filtered = loopData.map(ud => {
+			const dateItems = listItems.Data.filter(d => d.date == ud);
+			dateItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+			return dateItems[0];
+		});
+
 		const sortedItems = listItems.Data.slice().sort((a, b) => b.date - a.date);
 		const Unique = arr => {
 			//Store the unique
