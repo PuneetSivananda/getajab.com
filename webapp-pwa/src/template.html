@@ -11,5 +11,29 @@
 	</head>
 	<body>
 		<% preact.bodyEnd %>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyClWHL0IEb690WeRfi-KXaT0PI7cTQGSwk",
+    authDomain: "findmyjab-dev.firebaseapp.com",
+    projectId: "findmyjab-dev",
+    storageBucket: "findmyjab-dev.appspot.com",
+    messagingSenderId: "534851732827",
+    appId: "1:534851732827:web:f3590e842b96694211867e",
+    measurementId: "G-QPY9XDWC02"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 	</body>
 </html>

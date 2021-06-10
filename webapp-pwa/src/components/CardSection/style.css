@@ -1,24 +1,32 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 /* Flexbox styles */
 @media screen and (min-width: 40em) {
-	.cards {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		margin: -1rem;
-	}
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1rem;
+    grid-column: 1 / span 2;
+  }
 } /* mq 40em */
 
 @media screen and (min-width: 60em) {
-	.cards {
-		margin-top: inherit;
-	}
+  .cards {
+    margin-top: inherit;
+    grid-column: 1 / span 2;
+  }
 } /* mq 60em */
 
 .centerDiv {
-	top: 40%;
-	left: 50%;
-	position: absolute;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	transform: translateX(-50%);
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transform: translateX(-50%);
 }

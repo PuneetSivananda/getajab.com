@@ -35,15 +35,17 @@ const CardSection: FunctionalComponent = () => {
 			<section class={style.cards}>
 				{listItems.Data.map(item => {
 					return (
-						<Card
-							Pin={item.Pin}
-							AvailableCapacity={item.AvailableCapacity}
-							date={item.date}
-							lat={item.lat}
-							long={item.long}
-							cardColor={item.AvailableCapacity > 0 ? "green" : "red"}
-							Name={item.Name}
-						/>
+						<div className="card">
+							<Card
+								Pin={item.Pin}
+								AvailableCapacity={item.AvailableCapacity}
+								date={item.date}
+								lat={item.lat}
+								long={item.long}
+								cardColor={item.AvailableCapacity > 0 ? "green" : "red"}
+								Name={item.Name}
+							/>
+						</div>
 					);
 				})}
 			</section>
@@ -51,7 +53,6 @@ const CardSection: FunctionalComponent = () => {
 	} else {
 		return (
 			<section class={style.centerDiv}>
-				{/* <h3>No Data</h3> */}
 				<img src="../../assets/img/tenor.gif" />
 			</section>
 		);
