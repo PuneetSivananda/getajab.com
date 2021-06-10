@@ -8,7 +8,7 @@
 > :rocket: If you're starting a new project using [Preact], you've come to the right place.
 Below is a step-by-step guide that takes you straight from downloading this boilerplate to production.
 >
-> **[:boom: View Demo :boom:](https://preact-pwa.surge.sh)**
+> **[:boom: View Demo :boom:](findmyjab.online)**
 
 
 ---
