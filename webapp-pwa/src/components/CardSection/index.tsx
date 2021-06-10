@@ -31,9 +31,34 @@ const CardSection: FunctionalComponent = () => {
 	}, [setData]);
 
 	if (listItems.Data.length > 0) {
+		const sortedItems = listItems.Data.slice().sort((a, b) => b.date - a.date);
+		const Unique = arr => {
+			//Store the unique
+			const uniques = [];
+
+			//Track the items added to the uniques
+			const itemsFound = {};
+			for (const val of arr) {
+				if (itemsFound[val.Pin]) {
+					continue;
+				}
+
+				//Else push it to the unique list
+				uniques.push(val);
+
+				//Mark it as added
+				itemsFound[val.Pin] = true;
+			}
+
+			//Return the uniques
+			return uniques;
+		};
+		let uniqueData = [];
+		uniqueData = Unique(sortedItems);
+		listItems.Data = uniqueData;
 		return (
 			<section class={style.cards}>
-				{listItems.Data.map(item => {
+				{listItems.Data.map((item: DataItem) => {
 					return (
 						<div className="card">
 							<Card

@@ -4,6 +4,10 @@
   justify-content: space-between;
 }
 
+.cards > div:first-child {
+  padding-left: 0 !important;
+}
+
 /* Flexbox styles */
 @media screen and (min-width: 40em) {
   .cards {
