@@ -41,10 +41,7 @@ const ColoredLine = ({ color }: { color: string }) => (
 
 const Card = ({ Pin, AvailableCapacity, date, lat, long, Name }: Props) => {
 	return (
-		<a
-			class={style.card}
-			style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)"
-		>
+		<a class={style.card} style="--bg-img: url(../../../../assets/img/cover.jpg)">
 			<div>
 				<p>{Name}</p>
 				<h3>Date: {date}</h3>

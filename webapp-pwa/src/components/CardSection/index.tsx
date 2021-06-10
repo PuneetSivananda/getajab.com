@@ -52,7 +52,7 @@ const CardSection: FunctionalComponent = () => {
 		return (
 			<section class={style.centerDiv}>
 				{/* <h3>No Data</h3> */}
-				<img src="https://media1.tenor.com/images/e76b85dce6f7f34541987d13a28f1f96/tenor.gif?itemid=18564955" />
+				<img src="../../assets/img/tenor.gif" />
 			</section>
 		);
 	}
