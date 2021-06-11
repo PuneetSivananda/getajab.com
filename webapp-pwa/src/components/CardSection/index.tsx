@@ -2,7 +2,6 @@ import { h, FunctionalComponent } from "preact";
 import style from "./style.css";
 import Card from "../card";
 import { useEffect, useState } from "preact/hooks";
-
 interface DataItem {
 	AvailableCapacity: number;
 	Name: string;
@@ -23,47 +22,33 @@ const CardSection: FunctionalComponent = () => {
 	const [listItems, setData] = useState<DataList>({ Data: [] });
 
 	useEffect(() => {
+		function hasSameCharacter(str1, str2) {
+			for (let i = 0; i < str1.length; i++) {
+				if (str2.indexOf(str1[i]) <= -1) return false;
+			}
+			for (let i = 0; i < str2.length; i++) {
+				if (str1.indexOf(str2[i]) <= -1) return false;
+			}
+			return true;
+		}
+
 		websocket.onmessage = function(evnt) {
 			data = JSON.parse(evnt.data);
+			const dataList = data.Data;
+			const mon = new Date().getMonth() + 1;
+			const formatDate = new Date().getDate() + "-" + mon + "-" + new Date().getFullYear();
+			const returnList: DataItem[] = [];
+			dataList.forEach(item => {
+				if (hasSameCharacter(item.date, formatDate)) {
+					returnList.push(item);
+				}
+			});
 			console.log("Sending data to the connected websocket");
-			setData(data);
+			setData({ Data: returnList });
 		};
 	}, [setData]);
 
 	if (listItems.Data.length > 0) {
-		const uniqueDate = [...new Set(listItems.Data.map(center => center.date))];
-		const loopData = Array.from(uniqueDate[0]);
-		const filtered = loopData.map(ud => {
-			const dateItems = listItems.Data.filter(d => d.date == ud);
-			dateItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-			return dateItems[0];
-		});
-
-		const sortedItems = listItems.Data.slice().sort((a, b) => b.date - a.date);
-		const Unique = arr => {
-			//Store the unique
-			const uniques = [];
-
-			//Track the items added to the uniques
-			const itemsFound = {};
-			for (const val of arr) {
-				if (itemsFound[val.Pin]) {
-					continue;
-				}
-
-				//Else push it to the unique list
-				uniques.push(val);
-
-				//Mark it as added
-				itemsFound[val.Pin] = true;
-			}
-
-			//Return the uniques
-			return uniques;
-		};
-		let uniqueData = [];
-		uniqueData = Unique(sortedItems);
-		listItems.Data = uniqueData;
 		return (
 			<section class={style.cards}>
 				{listItems.Data.map((item: DataItem) => {
@@ -93,3 +78,10 @@ const CardSection: FunctionalComponent = () => {
 };
 
 export default CardSection;
+function str1(str1: any, str2: any): any {
+	throw new Error("Function not implemented.");
+}
+
+function str2(str1: (str1: any, str2: any) => any, str2: any): any {
+	throw new Error("Function not implemented.");
+}
