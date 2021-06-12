@@ -22,7 +22,7 @@ const CardSection: FunctionalComponent = () => {
 	const [listItems, setData] = useState<DataList>({ Data: [] });
 
 	useEffect(() => {
-		function hasSameCharacter(str1, str2) {
+		function hasSameCharacter(str1: string, str2: string): boolean {
 			for (let i = 0; i < str1.length; i++) {
 				if (str2.indexOf(str1[i]) <= -1) return false;
 			}
