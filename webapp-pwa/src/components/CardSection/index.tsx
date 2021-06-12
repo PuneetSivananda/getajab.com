@@ -53,17 +53,15 @@ const CardSection: FunctionalComponent = () => {
 			<section class={style.cards}>
 				{listItems.Data.map((item: DataItem) => {
 					return (
-						<div className="card">
-							<Card
-								Pin={item.Pin}
-								AvailableCapacity={item.AvailableCapacity}
-								date={item.date}
-								lat={item.lat}
-								long={item.long}
-								cardColor={item.AvailableCapacity > 0 ? "green" : "red"}
-								Name={item.Name}
-							/>
-						</div>
+						<Card
+							Pin={item.Pin}
+							AvailableCapacity={item.AvailableCapacity}
+							date={item.date}
+							lat={item.lat}
+							long={item.long}
+							cardColor={item.AvailableCapacity > 0 ? "green" : "red"}
+							Name={item.Name}
+						/>
 					);
 				})}
 			</section>

@@ -4,6 +4,7 @@ api/.env
 # UI
 node_modules
 webapp-pwa/build
+webapp-pwa/.env
 webapp-pwa/CNAME
 /*.log
 bin

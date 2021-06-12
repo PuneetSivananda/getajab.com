@@ -13,13 +13,9 @@ const Home: FunctionalComponent = () => {
 		geolocation.push(lat, lon);
 	});
 
-	console.log(geolocation);
 	return (
-		<main>
-			<div class={style.centered}>
-				<div id="map"></div>;{/* Add Cards component into a child that is rerendered */}
-				<CardSection />
-			</div>
+		<main class={style.paddingTop}>
+			<CardSection />
 		</main>
 	);
 };
