@@ -69,17 +69,10 @@ const CardSection: FunctionalComponent = () => {
 	} else {
 		return (
 			<section class={style.centerDiv}>
-				<img src="../../assets/img/tenor.gif" />
+				<img src="../../assets/img/loading.svg" />
 			</section>
 		);
 	}
 };
 
 export default CardSection;
-function str1(str1: any, str2: any): any {
-	throw new Error("Function not implemented.");
-}
-
-function str2(str1: (str1: any, str2: any) => any, str2: any): any {
-	throw new Error("Function not implemented.");
-}
