@@ -1,0 +1,11 @@
+{
+  "dev":{
+    "apiKey": "AIzaSyClWHL0IEb690WeRfi-KXaT0PI7cTQGSwk",
+    "authDomain": "findmyjab-dev.firebaseapp.com",
+    "projectId": "findmyjab-dev",
+    "storageBucket": "findmyjab-dev.appspot.com",
+    "messagingSenderId": "534851732827",
+    "appId": "1:534851732827:web:f3590e842b96694211867e",
+    "measurementId": "G-QPY9XDWC02"
+  }
+}
