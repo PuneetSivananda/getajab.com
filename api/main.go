@@ -7,8 +7,6 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/joho/godotenv"
-
 	"github.com/PuneetSivananda/cowin-api/websocket"
 )
 
@@ -33,11 +31,7 @@ func setupRoot(){
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
-func main(){
-	err := godotenv.Load()
-  if err != nil {
-    log.Fatal("Error loading .env file")
-  }
+func main(){	
 	fmt.Println("DataApi for the Cowin Stats")
 	setupRoot()
 }
