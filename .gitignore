@@ -6,5 +6,6 @@ node_modules
 webapp-pwa/build
 webapp-pwa/.env
 webapp-pwa/CNAME
+webapp-pwa/size-plugin.json
 /*.log
 bin
