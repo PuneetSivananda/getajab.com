@@ -90,18 +90,16 @@ func GetWeeklyData()(APIResponse, error){
 
 	for _,center:= range response.Centers {
 		for _, session:= range center.Sessions{
-			// fmt.Println(center.Pin, center.Name, session.AvailableCapacity, session.Date, center.Lat, center.Long)
-			centers = append(centers, Item{ 
-																			 Pin: center.Pin, 
-																			 Name: center.Name, 
-																			 AvailableCapacity: session.AvailableCapacity,
-																			 Date: session.Date, 
-																			 Lat: center.Lat, 
-																			 Long: center.Long,
-																			})
-			// if session.AvailableCapacity > 1{
-			// 	fmt.Println(session)
-			// } 
+			if session.AvailableCapacity > 1{
+				centers = append(centers, Item{ 
+					Pin: center.Pin, 
+					Name: center.Name, 
+					AvailableCapacity: session.AvailableCapacity,
+					Date: session.Date, 
+					Lat: center.Lat, 
+					Long: center.Long,
+				 })
+			} 
 		}
 	}
 
