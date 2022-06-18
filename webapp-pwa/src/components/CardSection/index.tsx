@@ -1,7 +1,9 @@
 import { h, FunctionalComponent } from "preact";
-import style from "./style.css";
-import Card from "../card";
 import { useEffect, useState } from "preact/hooks";
+import style from "./style.css";
+import Card from "../Card";
+import Spinner from "../Spinner";
+
 interface DataItem {
 	AvailableCapacity: number;
 	Name: string;
@@ -17,7 +19,8 @@ interface DataList {
 
 const CardSection: FunctionalComponent = () => {
 	let data: DataList = { Data: [] };
-	const websocket = new WebSocket("wss://evening-crag-51333.herokuapp.com/data");
+	// const websocket = new WebSocket("wss://evening-crag-51333.herokuapp.com/data");
+	const websocket = new WebSocket("ws://localhost:8081/data");
 
 	const [listItems, setData] = useState<DataList>({ Data: [] });
 
@@ -69,7 +72,7 @@ const CardSection: FunctionalComponent = () => {
 	} else {
 		return (
 			<section class={style.centerDiv}>
-				<img src="../../assets/img/loading.svg" />
+				<Spinner />
 			</section>
 		);
 	}
