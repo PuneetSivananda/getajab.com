@@ -156,10 +156,7 @@ body {
     margin: 10px 15px -10px 25px;
   }
   
-  .nft-creator {
-    display: inline;
-    color: hsl(215, 51%, 70%);
-  }
+
   .creator-name {
     color: hsl(0, 0%, 100%);
     cursor: pointer;
