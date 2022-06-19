@@ -20,18 +20,16 @@ const Home: FunctionalComponent = () => {
 			{/* <CardSection /> */}
 			<div class={cardStyle.card}>
 				<div class={cardStyle.imgContainer}>
+					{/* Add the google map component here make it accept just lat long */}
 					<img
 						src={bgImg}
 						class={cardStyle.cubeImg}
 						alt="image of glass cube"
 					/>
-					<a href="#" class="icon" alt="View More">
-						<img class="view-icon" src="./img/icon-view.svg" />
-					</a>
-					<div class="overlay"></div>
+					<div class={cardStyle.overlay}></div>
 				</div>
-				<h5 class="card-title">program Runing #3445</h5>
-				<p class="card-description">
+				<h5 class={cardStyle.cardTitle}>Runing #3445</h5>
+				<p class={cardStyle.cardDescription}>
 					As Advertising company we are earger to serve you in promoting your product
 					<a href="#">FEISAL ISSACK</a> 'CEO OF THE COMPANY'
 				</p>
