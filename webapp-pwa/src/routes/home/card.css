@@ -1,0 +1,58 @@
+/* Card Base design */
+.card {
+  margin-bottom: 5rem;
+  margin-left: 5rem;
+  height: 600px;
+  width: 350px;
+  background: hsl(216, 50%, 16%);
+  border-radius: 20px;
+  padding-bottom: 10px;
+  box-shadow: -8px 10px 30px 1px rgba(3, 14, 31, 0.49);
+  -webkit-box-shadow: -8px 10px 30px 1px rgba(3, 14, 31, 0.49);
+  -moz-box-shadow: -8px 10px 30px 1px rgba(3, 14, 31, 0.49);
+}
+
+/* Card title  */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.card-title:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
+}
+
+/* Card description */
+.card-description {
+  line-height: 1.75rem;
+  color: hsl(215, 51%, 70%);
+  font-weight: 100;
+  font-size: 1.05rem;
+  margin: -15px 20px auto 25px;
+}
+
+/* Image Container */
+
+.imgContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 25px auto 10px auto;
+}
+
+.imgContainer:hover .overlay {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.imgContainer:hover .icon {
+  opacity: 1;
+}
+
+/* .cubeImg{
+    background-image: url("../../assets/img/image-equilibrium.jpg");
+} */
