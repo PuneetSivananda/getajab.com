@@ -89,3 +89,67 @@
   display: block;
   margin: 25px auto 10px auto;
 }
+
+/* Text for Label */
+.cryptoPrice {
+  color: hsl(178, 100%, 50%);
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: inline;
+}
+
+.clockImg {
+  height: 30px;
+  width: 30px;
+  display: inline;
+  margin: auto 3px -2px auto;
+}
+
+.daysIndicator {
+  display: inline;
+  font-size: 1.125rem;
+  color: hsl(215, 51%, 70%);
+  margin-left: 70px;
+  font-weight: 400;
+}
+
+.divider {
+  border-color: hsl(215, 51%, 70%);
+  margin-top: 15px;
+  height: 0.5px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/* CSS for P tags */
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  display: inline;
+  border: solid 1px hsl(0, 0%, 100%);
+  border-radius: 50%;
+  margin: 10px 15px -10px 25px;
+}
+
+
+.creatorName {
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.creatorName:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+.cryptoSymbol {
+  height: 30px;
+  width: 20px;
+  margin: 20px 2px -4px 25px;
+  display: inline;
+}
+
+
+.creator {
+  padding-left: 30px;
+}
