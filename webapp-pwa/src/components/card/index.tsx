@@ -1,14 +1,7 @@
 import { h } from "preact";
 import style from "./style1.css";
-interface Props {
-	cardColor: string;
-	Name: string;
-	Pin: number;
-	AvailableCapacity: number;
-	date: string;
-	lat: number;
-	long: number;
-}
+import { CardProps as Props } from "../../models";
+
 const ColoredLine = ({ color }: { color: string }) => (
 	<hr
 		style={{

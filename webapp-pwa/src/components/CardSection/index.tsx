@@ -3,19 +3,7 @@ import { useEffect, useState } from "preact/hooks";
 import style from "./style.css";
 import Card from "../Card";
 import Spinner from "../Spinner";
-
-interface DataItem {
-	AvailableCapacity: number;
-	Name: string;
-	Pin: number;
-	date: string;
-	lat: number;
-	long: number;
-}
-
-interface DataList {
-	Data: DataItem[];
-}
+import { DataList, DataItem } from "../../models";
 
 const CardSection: FunctionalComponent = () => {
 	let data: DataList = { Data: [] };
@@ -46,7 +34,6 @@ const CardSection: FunctionalComponent = () => {
 					returnList.push(item);
 				}
 			});
-			console.log("Sending data to the connected websocket");
 			setData({ Data: returnList });
 		};
 	}, [setData]);
