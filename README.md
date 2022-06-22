@@ -1,27 +1,23 @@
 # Preact PWA Boilerplate / Starter Kit
 
+[Map App Demo](https://youtu.be/JJatzkPcmoI)
 [![Build Status](https://travis-ci.org/gokulkrishh/preact-pwa-boilerplate.svg?branch=master)](https://travis-ci.org/gokulkrishh/preact-pwa-boilerplate)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ca11c8c5-c780-43a0-8dba-4808ed9547a0/deploy-status)](https://app.netlify.com/sites/clever-yalow-4f684d/deploys)
 
-> :guitar: Ready-to-rock [Preact] starter project, powered by [webpack].
->
-> :rocket: If you're starting a new project using [Preact], you've come to the right place.
-Below is a step-by-step guide that takes you straight from downloading this boilerplate to production.
->
 > **[:boom: View Demo :boom:](findmyjab.online)**
 
 
 ---
 ### Links
 
-[npx create-turbo@latest](https://turborepo.org/)
-
+- Add links used for reference here
 
 ## What changes are done?
 
-Added ```serviceWorker``` for offline support, ```manifest.json``` file for add to homescreen support, cool icons from preact site and updated preact to latest version(7.1.0) + yarn ;). Rest all the same!!
+- 06/2022
+  - Bring in New UI changes for card
+  - TODO: Integrate Mapbox API
 
-Thanks to [Jason Miller](https://github.com/developit) for writing a simple and awesome boilerplate.
 
 ## What else do you want?
 
