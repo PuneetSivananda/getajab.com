@@ -132,7 +132,6 @@
   margin: 10px 15px -10px 25px;
 }
 
-
 .creatorName {
   color: hsl(0, 0%, 100%);
   cursor: pointer;
@@ -148,7 +147,6 @@
   margin: 20px 2px -4px 25px;
   display: inline;
 }
-
 
 .creator {
   padding-left: 30px;
