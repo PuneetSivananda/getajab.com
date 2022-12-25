@@ -3,6 +3,9 @@
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 	import Button from "@smui/button"
+	import TopAppBar, {
+	  AutoAdjust,
+	} from '@smui/top-app-bar';
 </script>
 
 <svelte:head>
