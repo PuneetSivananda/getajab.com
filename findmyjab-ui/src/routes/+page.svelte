@@ -2,6 +2,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import Button from "@smui/button"
 </script>
 
 <svelte:head>
@@ -26,6 +27,7 @@
 	</h2>
 
 	<Counter />
+	<Button on:click={()=>alert("Clicked")}>Click here!</Button>
 </section>
 
 <style>
