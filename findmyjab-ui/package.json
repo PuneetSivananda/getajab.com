@@ -14,9 +14,12 @@
 		"smui-theme-dark": "npx smui-theme compile static/smui-dark.css -i src/theme/dark"
 	},
 	"devDependencies": {
+		"@emotion/styled": "^11.10.5",
 		"@fontsource/fira-mono": "^4.5.10",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@smui/button": "^7.0.0-beta.0",
+		"@smui/icon-button": "^7.0.0-beta.0",
+		"@smui/top-app-bar": "^7.0.0-beta.0",
 		"@sveltejs/adapter-auto": "^1.0.0",
 		"@sveltejs/kit": "^1.0.0",
 		"@types/cookie": "^0.5.1",
