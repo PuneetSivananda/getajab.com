@@ -4,6 +4,7 @@
 	import IconButton, {Icon} from '@smui/icon-button';
 	import {mdiMenu, mdiWeatherSunny, mdiWeatherNight} from '@mdi/js';
 	import {Svg} from '@smui/common';
+
 	let topAppBar: TopAppBar;
 	let darkTheme: boolean | undefined | MediaQueryList = undefined
 
@@ -48,8 +49,8 @@
 			</Section>
 		</Row>
 	</TopAppBar>
-
 	<AutoAdjust {topAppBar}>
+		
 	</AutoAdjust>
 </header>
 

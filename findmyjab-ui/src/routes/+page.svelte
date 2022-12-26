@@ -1,9 +1,5 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
-	import Button from '@smui/button';
-	import TopAppBar, { AutoAdjust } from '@smui/top-app-bar';
+
 </script>
 
 <svelte:head>
@@ -12,23 +8,9 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
+	<h1 class="text-3xl font-bold underline text-black">
+		Hello world!
 	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-	<Button on:click={() => alert('Clicked')}>Click here!</Button>
 </section>
 
 <style>

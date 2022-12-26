@@ -9,12 +9,6 @@ const config = {
 
 	kit: {
 		adapter: adapter()
-		// target: '#svelte',
-		// vite: {
-		// 	ssr: {
-		// 		noExternal: [/^@material\//, /^@smui(?:-extra)?\//]
-		// 	}
-		// }
 	}
 };
 
