@@ -39,3 +39,6 @@ You can preview the production build with `npm run preview`.
 
 > To setup material ui in sveltekit follow this video
 > https://youtu.be/OyjZ7dezADw
+
+> Toggle Dark mode in tailwind css
+> https://svelte.dev/repl/400e9aa749554b79971ad5442e8957fd?version=3.18.1
