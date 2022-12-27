@@ -1,5 +1,6 @@
 <script>
-	import Hero from '$lib/pages/hero.svelte';
+	import Hero from '$lib/pages/landing/hero.svelte';
+	import Features from '$lib/pages/landing/features.svelte'; 
 </script>
 
 <svelte:head>
@@ -11,7 +12,11 @@
 <section id="hero">
 	<Hero />
 </section>
-<section>Hello</section>
+<!-- Features Section -->
+<section id="features">
+	<!-- Flex Container -->
+	<Features/>
+</section>
 
 <style>
 </style>
