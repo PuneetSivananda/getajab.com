@@ -1,18 +1,16 @@
 <script lang="ts">
 	import Header from './Header.svelte';
-	import Footer from './Footer.svelte'
+	import Footer from './Footer.svelte';
 	import './styles.css';
-	import "../app.css";
+	import '../app.css';
 </script>
-
 
 <div class="app">
 	<Header />
 	<main>
 		<slot />
 	</main>
-	<Footer/>
-	
+	<Footer />
 </div>
 
 <style>
@@ -32,5 +30,4 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
-
 </style>

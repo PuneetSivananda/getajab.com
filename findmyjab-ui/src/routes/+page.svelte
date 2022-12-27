@@ -1,5 +1,5 @@
 <script>
-
+	import Hero from '$lib/pages/hero.svelte';
 </script>
 
 <svelte:head>
@@ -9,12 +9,9 @@
 
 <!-- Hero Section -->
 <section id="hero">
-	<!-- Flex Container -->
-	World
+	<Hero />
 </section>
-<section>
-	Hello
-</section>
+<section>Hello</section>
 
 <style>
 </style>
