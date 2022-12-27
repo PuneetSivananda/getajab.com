@@ -42,3 +42,6 @@ You can preview the production build with `npm run preview`.
 
 > Toggle Dark mode in tailwind css
 > https://svelte.dev/repl/400e9aa749554b79971ad5442e8957fd?version=3.18.1
+
+> Daisy UI for building the ui component library
+> https://daisyui.com/components/chat/
