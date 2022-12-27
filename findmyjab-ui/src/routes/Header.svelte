@@ -11,15 +11,15 @@
 			</div>
 			<!-- Menu items -->
 			<div class="md:flex space-x-6 hidden">
-				<a href="#" class="hover:text-darkGrayishBlue">Pricing</a>
-				<a href="#" class="hover:text-darkGrayishBlue">Product</a>
-				<a href="#" class="hover:text-darkGrayishBlue">About Us </a>
-				<a href="#" class="hover:text-darkGrayishBlue">Careers</a>
-				<a href="#" class="hover:text-darkGrayishBlue">Community</a>
+				<a href="#top" class="hover:text-darkGrayishBlue">Pricing</a>
+				<a href="#top" class="hover:text-darkGrayishBlue">Product</a>
+				<a href="#top" class="hover:text-darkGrayishBlue">About Us </a>
+				<a href="#top" class="hover:text-darkGrayishBlue">Careers</a>
+				<a href="#top" class="hover:text-darkGrayishBlue">Community</a>
 			</div>
 			<!-- Button -->
 			<a
-				href="#"
+				href="#top"
 				class="hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight"
 			>
 				Get Started

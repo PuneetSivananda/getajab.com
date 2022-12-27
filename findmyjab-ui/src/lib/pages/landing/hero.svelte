@@ -12,7 +12,7 @@
         </p>
         <div class="flex justify-center md:justify-start">
             <a
-				href="#"
+				href="#top"
 				class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight"
 			>
 				Get Started
