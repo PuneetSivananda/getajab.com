@@ -45,3 +45,6 @@ You can preview the production build with `npm run preview`.
 
 > Daisy UI for building the ui component library
 > https://daisyui.com/components/chat/
+
+> Creative Tim Website for reference 
+> https://github.com/creativetimofficial/notus-svelte
