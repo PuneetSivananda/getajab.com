@@ -48,3 +48,6 @@ You can preview the production build with `npm run preview`.
 
 > Creative Tim Website for reference 
 > https://github.com/creativetimofficial/notus-svelte
+
+> Tailwind Toggle darkmode example
+> https://youtu.be/pfaSUYaSgRo
