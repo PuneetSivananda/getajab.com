@@ -1,10 +1,13 @@
 <script lang="ts">
+	let current = false
+	let navInactiveClass = "block hamburger md:hidden focus:outline-none btn-brightRedLight"
+	let menuClass = "absolute flex flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
 </script>
 
 <!-- maked header sticky below classes -->
 <!-- <header class="sticky top-0 bg-brightRedLight"> -->
 <header>
-	<nav class="relative container mx-auto p-6 ">
+	<nav class="relative container mx-auto p-6">
 		<!-- Flex Container -->
 		<div class="flex items-center justify-between">
 			<!-- logo -->
@@ -28,15 +31,19 @@
 			</a>
 			<!-- hamburger icon -->
 			<!-- open add js magic to toggle -->
-			<button id="menu-btn" class="open block hamburger md:hidden focus:outline-none btn-brightRedLight">
+			<button 
+			id="menu-btn" 
+			on:click={()=> current = !current}
+			class={current? `open ${navInactiveClass}`:`${navInactiveClass}`}
+			>
 				<span class="hamburger-top"></span>
 				<span class="hamburger-middle"></span>
 				<span class="hamburger-bottom"></span>
 			</button>
 		</div>
-		
+		<!-- Mobile Menu -->
 		<div class="md:hidden">
-			 <div id="menu" class="absolute flex flex-col items-center self-end hidden py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+			 <div id="menu" class={current? `${menuClass}`:`${menuClass} hidden`}>
 				<a href="#">Pricing</a>
 				<a href="#">Product</a>
 				<a href="#">About us</a>
