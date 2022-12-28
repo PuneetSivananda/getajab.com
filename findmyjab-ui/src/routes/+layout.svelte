@@ -5,9 +5,9 @@
 	import '../app.css';
 </script>
 
-	<Header />
-	<slot />
-	<Footer />
+<Header />
+<slot />
+<Footer />
 
 <style>
 	.app {

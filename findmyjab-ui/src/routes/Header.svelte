@@ -1,7 +1,8 @@
 <script lang="ts">
-	let current = false
-	let navInactiveClass = "block hamburger md:hidden focus:outline-none btn-brightRedLight"
-	let menuClass = "absolute flex flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+	let current = false;
+	let navInactiveClass = 'block hamburger md:hidden focus:outline-none btn-brightRedLight';
+	let menuClass =
+		'absolute flex flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md';
 </script>
 
 <!-- maked header sticky below classes -->
@@ -31,19 +32,19 @@
 			</a>
 			<!-- hamburger icon -->
 			<!-- open add js magic to toggle -->
-			<button 
-			id="menu-btn" 
-			on:click={()=> current = !current}
-			class={current? `open ${navInactiveClass}`:`${navInactiveClass}`}
+			<button
+				id="menu-btn"
+				on:click={() => (current = !current)}
+				class={current ? `open ${navInactiveClass}` : `${navInactiveClass}`}
 			>
-				<span class="hamburger-top"></span>
-				<span class="hamburger-middle"></span>
-				<span class="hamburger-bottom"></span>
+				<span class="hamburger-top" />
+				<span class="hamburger-middle" />
+				<span class="hamburger-bottom" />
 			</button>
 		</div>
 		<!-- Mobile Menu -->
 		<div class="md:hidden">
-			 <div id="menu" class={current? `${menuClass}`:`${menuClass} hidden`}>
+			<div id="menu" class={current ? `${menuClass}` : `${menuClass} hidden`}>
 				<a href="#">Pricing</a>
 				<a href="#">Product</a>
 				<a href="#">About us</a>
