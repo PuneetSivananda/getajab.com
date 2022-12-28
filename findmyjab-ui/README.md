@@ -54,3 +54,6 @@ You can preview the production build with `npm run preview`.
 
 > Tailwind page 
 > https://salient.tailwindui.com/
+
+> Covid dashboard
+> https://youtu.be/GryBIsfBfro
