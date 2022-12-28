@@ -1,7 +1,8 @@
 <script lang="ts">
 </script>
 
-<header>
+<!-- maked header sticky below classes -->
+<header class="sticky top-0 bg-brightRedLight">
 	<nav class="relative container mx-auto p-6 ">
 		<!-- Flex Container -->
 		<div class="flex items-center justify-between">
