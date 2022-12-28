@@ -51,3 +51,6 @@ You can preview the production build with `npm run preview`.
 
 > Tailwind Toggle darkmode example
 > https://youtu.be/pfaSUYaSgRo
+
+> Tailwind page 
+> https://salient.tailwindui.com/
