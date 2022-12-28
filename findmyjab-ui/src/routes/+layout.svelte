@@ -5,13 +5,9 @@
 	import '../app.css';
 </script>
 
-<div class="app">
 	<Header />
-	<main>
-		<slot />
-	</main>
+	<slot />
 	<Footer />
-</div>
 
 <style>
 	.app {
